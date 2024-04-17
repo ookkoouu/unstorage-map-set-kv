@@ -10,6 +10,7 @@ export interface KVStorage<
 	set: (value: T) => Promise<void>;
 	setItem: <K extends keyof T>(key: K, value: T[K]) => Promise<void>;
 	reset: () => Promise<void>;
+	watch: (callback: WatchCallback<T>) => Promise<Unwatch>;
 	watchItem: <K extends keyof T>(
 		key: K,
 		callback: WatchCallback<T[K]>,
@@ -60,19 +61,24 @@ export function createKVStorage<T extends Record<string, StorageValue>>(
 			await this.set(_default);
 		},
 
+		async watch(callback) {
+			if (_driver.watch === undefined) {
+				return () => undefined;
+			}
+			return _driver.watch(async (e, k) => {
+				if (e !== "update" || k !== _key) return;
+				return callback(await this.get());
+			});
+		},
+
 		async watchItem(key, callback) {
 			if (_driver.watch === undefined) {
 				return () => undefined;
 			}
-			const unwatch = await _driver.watch(async (e, k) => {
+			return _driver.watch(async (e, k) => {
 				if (e !== "update" || k !== _key) return;
-
-				const newValue = await this.get();
-				const newItem = newValue[key];
-				await callback(structuredClone(newItem));
+				return callback((await this.get())[key]);
 			});
-
-			return () => unwatch();
 		},
 	};
 }

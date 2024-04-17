@@ -84,13 +84,10 @@ export function createSetStorage<T extends StorageValue>(
 			if (_driver.watch === undefined) {
 				return () => undefined;
 			}
-			const unwatch = await _driver.watch(async (e, k) => {
+			return _driver.watch(async (e, k) => {
 				if (e !== "update" || k !== _key) return;
-				const newValue = await _get();
-				await callback(newValue);
+				return callback(await _get());
 			});
-
-			return () => unwatch();
 		},
 	};
 }
