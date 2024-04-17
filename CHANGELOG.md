@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/ookkoouu/unstorage-map-set-kv/compare/v1.0.1...v1.0.2) (2024-04-17)
+
+
+### Bug Fixes
+
+* fix package.json ([19fd601](https://github.com/ookkoouu/unstorage-map-set-kv/commit/19fd60150a60a587877d4134d72d18c3400a7be2))
+
 ## [1.0.1](https://github.com/ookkoouu/unstorage-map-set-kv/compare/v1.0.0...v1.0.1) (2024-04-17)
 
 
