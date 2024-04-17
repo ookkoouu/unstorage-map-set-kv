@@ -11,6 +11,9 @@
 		"test": "vitest run",
 		"prepack": "run-p typecheck build"
 	},
+	"publishConfig": {
+		"access": "public"
+	},
 	"main": "./dist/index.cjs",
 	"module": "./dist/index.js",
 	"types": "./dist/index.d.ts",
