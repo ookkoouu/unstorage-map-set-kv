@@ -1,6 +1,6 @@
 {
 	"name": "@okou/unstorage-map-set-kv",
-	"version": "1.0.2",
+	"version": "1.1.0",
 	"author": "okou",
 	"license": "MIT-0",
 	"type": "module",
