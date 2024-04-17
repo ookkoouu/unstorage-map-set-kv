@@ -15,7 +15,7 @@ await storage.getItem("useFor"); // => Promise<string[]>
 ```
 
 ## Interface
-- [MapStorage]()
-- [SetStorage]()
-- [KVStorage]()
+- [MapStorage](https://github.com/ookkoouu/unstorage-map-set-kv/blob/main/src/map.ts)
+- [SetStorage](https://github.com/ookkoouu/unstorage-map-set-kv/blob/main/src/set.ts)
+- [KVStorage](https://github.com/ookkoouu/unstorage-map-set-kv/blob/main/src/kv.ts)
 
