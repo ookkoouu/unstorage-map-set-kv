@@ -1,9 +1,11 @@
 import type { StorageValue } from "unstorage";
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { createMapStorage } from "../src/map";
 
+type Testcase = { name: string; input: [StorageValue, StorageValue] };
+
 describe("get", () => {
-	const tests: { name: string; input: [StorageValue, StorageValue] }[] = [
+	const tests: Testcase[] = [
 		{ name: "str", input: ["test_key", "test_value"] },
 		{ name: "num", input: [1, 1234] },
 		{ name: "bool", input: [false, true] },
@@ -28,7 +30,7 @@ describe("get", () => {
 });
 
 describe("has", () => {
-	const tests: { name: string; input: [StorageValue, StorageValue] }[] = [
+	const tests: Testcase[] = [
 		{ name: "str", input: ["test_key", "test_value"] },
 		{ name: "num", input: [1, 1234] },
 		{ name: "bool", input: [false, true] },
@@ -53,7 +55,7 @@ describe("has", () => {
 });
 
 describe("delete", () => {
-	const tests: { name: string; input: [StorageValue, StorageValue] }[] = [
+	const tests: Testcase[] = [
 		{ name: "str", input: ["test_key", "test_value"] },
 		{ name: "num", input: [1, 1234] },
 		{ name: "bool", input: [false, true] },
@@ -80,7 +82,7 @@ describe("delete", () => {
 });
 
 describe("watch", () => {
-	const tests: { name: string; input: [StorageValue, StorageValue] }[] = [
+	const tests: Testcase[] = [
 		{ name: "str", input: ["test_key", "test_value"] },
 		{ name: "num", input: [1, 1234] },
 		{ name: "bool", input: [false, true] },
