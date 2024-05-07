@@ -38,7 +38,7 @@
 		"url": "https://github.com/ookkoouu/unstorage-map-set-kv.git"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^1.7.0",
+		"@biomejs/biome": "^1.7.3",
 		"lefthook": "^1.6.10",
 		"npm-run-all2": "^6.1.2",
 		"prettier": "^3.2.5",
