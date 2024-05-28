@@ -39,7 +39,7 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.7.0",
-		"lefthook": "^1.6.10",
+		"lefthook": "^1.6.13",
 		"npm-run-all2": "^6.1.2",
 		"prettier": "^3.2.5",
 		"tsup": "^8.0.2",
